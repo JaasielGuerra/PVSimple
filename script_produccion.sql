@@ -146,6 +146,7 @@ CREATE TABLE IF NOT EXISTS public.kardex
     cantidad integer NOT NULL,
     existencia_posterior integer NOT NULL,
     id_producto bigint NOT NULL,
+    id_usuario bigint NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -358,6 +359,14 @@ ALTER TABLE IF EXISTS public.producto
 ALTER TABLE IF EXISTS public.kardex
     ADD FOREIGN KEY (id_producto)
     REFERENCES public.producto (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.kardex
+    ADD FOREIGN KEY (id_usuario)
+    REFERENCES public.usuario (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
