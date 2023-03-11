@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS public.venta
 (
     id bigserial NOT NULL,
     fecha date NOT NULL,
+    hora time without time zone NOT NULL,
     total numeric(9, 2) NOT NULL,
     total_ganancia numeric(9, 2) NOT NULL,
     tipo integer NOT NULL,
@@ -148,6 +149,13 @@ CREATE TABLE IF NOT EXISTS public.kardex
     PRIMARY KEY (id)
 );
 
+COMMENT ON TABLE public.kardex
+    IS 'tipo:
+1 = entrada
+2 = salida
+3 = ajuste
+4 = devolucion';
+
 CREATE TABLE IF NOT EXISTS public.codigo_producto
 (
     id bigserial NOT NULL,
@@ -161,6 +169,7 @@ CREATE TABLE IF NOT EXISTS public.compra
 (
     id bigserial NOT NULL,
     fecha date NOT NULL,
+    hora time without time zone NOT NULL,
     documento character varying(45) NOT NULL,
     total numeric(9, 2) NOT NULL,
     estado integer NOT NULL,
