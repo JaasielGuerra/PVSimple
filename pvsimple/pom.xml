@@ -10,11 +10,12 @@
 	</parent>
 	<groupId>com.guerra</groupId>
 	<artifactId>pvsimple</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>PVSimple</name>
 	<description>Punto de venta simple</description>
 	<properties>
 		<java.version>11</java.version>
+		<javafx.version>19</javafx.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,6 +43,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>${javafx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>${javafx.version}</version>
 		</dependency>
 	</dependencies>
 
