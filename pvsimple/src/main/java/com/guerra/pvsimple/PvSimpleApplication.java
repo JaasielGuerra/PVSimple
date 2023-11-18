@@ -45,9 +45,11 @@ public class PvSimpleApplication extends Application {
     private void cargarEscenaEn(Stage primaryStage) throws Exception {
         Scene scene = new Scene(loader.load());
 
-        primaryStage.setMaximized(true);
+        //primaryStage.setMaximized(true);
         primaryStage.setTitle(appName + " v" + appVersion);
         primaryStage.setScene(scene);
+        primaryStage.setMinWidth(1024);
+        primaryStage.setMinHeight(640);
         primaryStage.show();
     }
 }
